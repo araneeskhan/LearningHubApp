@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-LearningHubApp
 # LearningHubApp
 LearningHub is a modern and interactive learning platform built with React Native. It offers a wide range of courses, quizzes, and video lessons to help users enhance their skills.
 
@@ -118,33 +116,5 @@ Aranees Khan - [@araneeskhan](https://github.com/araneeskhan)
 Project Link: [https://github.com/araneeskhan/LearningHubApp](https://github.com/araneeskhan/LearningHubApp)
 ```
 
-## 4. Now, let's push your project to GitHub:
 
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/araneeskhan/LearningHubApp.git
-git push -u origin main
-```
 
-## 5. Additional tips:
-
-1. Make sure to create the repository on GitHub first at https://github.com/araneeskhan/LearningHubApp
-
-2. Consider adding environment variables for sensitive information:
-   - Create a `.env` file for local development
-   - Use GitHub Secrets for CI/CD workflows
-
-3. You might want to add screenshots to your README for better visual appeal
-
-4. If you plan to have contributors, consider adding:
-   - CONTRIBUTING.md with guidelines
-   - Issue and PR templates
-   - Code of conduct
-
-The README I've created highlights the key features of your LearningHub app, provides clear installation instructions, and has a professional, modern look. Feel free to customize it further with your specific project details!
-=======
-# LearningHubApp
->>>>>>> e53afd3b656dfab908ef3548a6d2d8632a63790b
