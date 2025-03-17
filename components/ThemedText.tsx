@@ -1,60 +1,59 @@
-import { Text, type TextProps, StyleSheet } from 'react-native';
-
-import { useThemeColor } from '@/hooks/useThemeColor';
+import { Text, TextProps } from 'react-native';
+import { useTheme } from '@/context/ThemeContext';
+import { Colors } from '@/constants/Colors';
 
 export type ThemedTextProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
-  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
+  type?: 'default' | 'defaultSemiBold' | 'title' | 'subtitle' | 'link';
 };
 
-export function ThemedText({
-  style,
-  lightColor,
-  darkColor,
-  type = 'default',
-  ...rest
-}: ThemedTextProps) {
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
+export function ThemedText(props: ThemedTextProps) {
+  const { style, lightColor, darkColor, type = 'default', ...otherProps } = props;
+  const { theme } = useTheme();
+  const colors = Colors[theme];
+
+  // Default text color based on theme
+  const color = theme === 'dark' ? colors.text : colors.text;
+
+  // Font styles based on text type
+  let textStyle = {};
+  switch (type) {
+    case 'title':
+      textStyle = {
+        fontSize: 24,
+        fontWeight: '700',
+        marginBottom: 8,
+      };
+      break;
+    case 'subtitle':
+      textStyle = {
+        fontSize: 18,
+        fontWeight: '600',
+        marginBottom: 4,
+      };
+      break;
+    case 'defaultSemiBold':
+      textStyle = {
+        fontWeight: '600',
+      };
+      break;
+    case 'link':
+      textStyle = {
+        color: colors.primary,
+        textDecorationLine: 'underline',
+      };
+      break;
+    default:
+      textStyle = {
+        fontSize: 16,
+      };
+  }
 
   return (
     <Text
-      style={[
-        { color },
-        type === 'default' ? styles.default : undefined,
-        type === 'title' ? styles.title : undefined,
-        type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
-        type === 'subtitle' ? styles.subtitle : undefined,
-        type === 'link' ? styles.link : undefined,
-        style,
-      ]}
-      {...rest}
+      style={[{ color }, textStyle, style]}
+      {...otherProps}
     />
   );
 }
-
-const styles = StyleSheet.create({
-  default: {
-    fontSize: 16,
-    lineHeight: 24,
-  },
-  defaultSemiBold: {
-    fontSize: 16,
-    lineHeight: 24,
-    fontWeight: '600',
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    lineHeight: 32,
-  },
-  subtitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  link: {
-    lineHeight: 30,
-    fontSize: 16,
-    color: '#0a7ea4',
-  },
-});

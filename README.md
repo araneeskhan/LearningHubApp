@@ -1,50 +1,146 @@
-# Welcome to your Expo app 👋
+LearningHubApp
+# LearningHubApp
+LearningHub is a modern and interactive learning platform built with React Native. It offers a wide range of courses, quizzes, and video lessons to help users enhance their skills.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Features
 
-## Get started
+LearningHub is a comprehensive learning platform that offers:
 
-1. Install dependencies
+- 📚 **Course Library**: Browse and access a wide range of courses across different categories
+- 🔒 **Progressive Learning**: Unlock lessons as you complete prerequisites
+- 📱 **Cross-Platform**: Works seamlessly on iOS, Android, and Web
+- 🌙 **Dark Mode**: Full support for light and dark themes
+- 🎥 **Video Lessons**: Watch high-quality video content with progress tracking
+- 📝 **Text Lessons**: Read comprehensive text-based lessons with code snippets
+- 🧠 **Quizzes**: Test your knowledge with interactive quizzes
+- 🔔 **Progress Tracking**: Track your progress across courses and modules
+- 🔐 **User Authentication**: Secure login and account management
+- 💳 **Premium Content**: Access to premium courses with subscription
 
+## Tech Stack
+
+- [React Native](https://reactnative.dev/) - Core framework
+- [Expo](https://expo.dev/) - Development platform
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Expo Router](https://docs.expo.dev/router/introduction/) - File-based routing
+- [Supabase](https://supabase.com/) - Backend and authentication
+- [Moti](https://moti.fyi/) - Animations
+- [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/) - Advanced animations
+- [Expo AV](https://docs.expo.dev/versions/latest/sdk/av/) - Audio/video playback
+- [React Native Markdown Display](https://github.com/iamacup/react-native-markdown-display) - Markdown rendering
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v16 or newer)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [Expo CLI](https://docs.expo.dev/workflow/expo-cli/)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/araneeskhan/LearningHubApp.git
+   cd LearningHubApp
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
+   # or
+   yarn install
    ```
 
-2. Start the app
+3. Set up Supabase:
+   - Create a Supabase project at [supabase.com](https://supabase.com/)
+   - Copy `lib/supabase.example.ts` to `lib/supabase.ts`
+   - Update the Supabase URL and anon key in `lib/supabase.ts`
 
+4. Start the development server:
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+### Database Schema
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+The application uses the following Supabase tables:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- `users` - User accounts
+- `courses` - Course information
+- `modules` - Course modules
+- `lessons` - Individual lessons
+- `user_progress` - User progress tracking
+- `subscriptions` - User subscription status
 
-## Get a fresh project
+## Project Structure
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+LearningHub/
+├── app/                  # Application screens
+│   ├── (tabs)/           # Tab-based navigation
+│   ├── course/           # Course screens
+│   ├── lesson/           # Lesson screens
+│   └── ...               # Other screens
+├── assets/               # Static assets
+│   ├── fonts/            # Custom fonts
+│   └── images/           # Images and icons
+├── components/           # Reusable components
+│   ├── lesson/           # Lesson-specific components
+│   ├── ui/               # UI components
+│   └── ...               # Other components
+├── constants/            # App constants
+├── context/              # React context providers
+├── hooks/                # Custom React hooks
+├── lib/                  # Utility libraries
+└── types/                # TypeScript type definitions
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Contributing
 
-## Learn more
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-To learn more about developing your project with Expo, look at the following resources:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## License
 
-## Join the community
+Distributed under the MIT License. See `LICENSE` for more information.
 
-Join our community of developers creating universal apps.
+## Contact
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Aranees Khan - [@araneeskhan](https://github.com/araneeskhan)
+
+Project Link: [https://github.com/araneeskhan/LearningHubApp](https://github.com/araneeskhan/LearningHubApp)
+```
+
+## 4. Now, let's push your project to GitHub:
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/araneeskhan/LearningHubApp.git
+git push -u origin main
+```
+
+## 5. Additional tips:
+
+1. Make sure to create the repository on GitHub first at https://github.com/araneeskhan/LearningHubApp
+
+2. Consider adding environment variables for sensitive information:
+   - Create a `.env` file for local development
+   - Use GitHub Secrets for CI/CD workflows
+
+3. You might want to add screenshots to your README for better visual appeal
+
+4. If you plan to have contributors, consider adding:
+   - CONTRIBUTING.md with guidelines
+   - Issue and PR templates
+   - Code of conduct
+
+The README I've created highlights the key features of your LearningHub app, provides clear installation instructions, and has a professional, modern look. Feel free to customize it further with your specific project details!
